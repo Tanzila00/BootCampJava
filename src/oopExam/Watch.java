@@ -1,5 +1,5 @@
 package oopExam;
 
 public interface Watch {
-	// create a method
+	public void watchInfo();
 }

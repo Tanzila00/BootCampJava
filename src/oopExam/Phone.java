@@ -1,27 +1,36 @@
 package oopExam;
 
 /*
- Points: 70
-
-1) What are the features of Interface you know? use multiple line comments here to describe it. you can use newline (\n) and tab(\t)
+ * Interface is Blueprint of Class. It cannot be instantiated neither can it create an object.
+ * Interface names starts with UpperCase.
+ * They follow Camel case or Snake case pattern.
+ * Inside Interface method can only be declared and cannot be implemented. Methods declared are all abstract in nature.The keyword abstract is not required to be used when method is declared!
+ * Exceptional method that can implemented inside interface is default and static method only. They are non-abstract method and is also implemented!
  
-2) if Phone interface, inherit other Interface -- Pager and Wakitoki, use appropriate keywords to inherit them in line 11. if Phone interface can inherit regular class - LandPhone and one abstract class SatelitePhone, use appropriate keywords to inherit them. if not, then ignore it
  */
 
-public interface Phone {
+public interface Phone extends Pager, Wakitoki {
 
-/*
- 3) Create a variable and a constructor if possible, if not possible to create variable and constructor, use multiple line comments with explanation
- */
-	
-	
-/*
-4) Create four abstract method interfaceInfo (created below), call, message and camera 
-*/
+	/*
+	 * Interface doesn't create a constructor. Variable can only be declared but not
+	 * initialized. The declared variable MUST be static and final in nature.
+	 */
+
 	public void interfaceInfo();
-	
-/*
-5) Create 2 non-abstract method - battery and wireless which are implemented inside this interface. Inside sysout print example-- "battery is a --- method from Java --?--" and complete the wireless one
- */
 
+	public void call();
+
+	public void message();
+
+	public void camera();
+
+	public default void battery() {
+		System.out.println(
+				"battery is  a default method which is only implemented in interface class and can only be used in Java version 1.8");
+	}
+
+	public static void wireless() {
+		System.out.println(
+				"wireless is  a static method which is implemented in interface class and can only be used in Java version 1.8");
+	}
 }

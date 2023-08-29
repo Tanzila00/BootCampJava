@@ -1,5 +1,7 @@
 package oopExam;
 
 public class LandPhone {
-	//create a method
+	public void LandPhoneInfo() {
+		System.out.println("This is the void type method for LandPhone regular class");
+	}
 }
